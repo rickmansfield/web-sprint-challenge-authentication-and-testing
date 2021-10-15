@@ -24,6 +24,12 @@ describe('[POST] /api/auth/register', () => {
     .send(newUser);
     expect(res.status).toBe(201);
   });
+  it('responds with the newly registered user', async () => {
+    let res = await request(server)
+      .post('/api/auth/register')
+      .send({ username: 'test2', password: '1234' })
+    expect(res.body).toMatchObject({ id: 2, username: 'test2' })
+  })
 });
 
 describe('[POST] /api/auth/login', () => {
