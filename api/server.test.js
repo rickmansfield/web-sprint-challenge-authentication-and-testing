@@ -24,6 +24,7 @@ describe('[POST] /api/auth/register', () => {
     .send(newUser);
     expect(res.status).toBe(201);
   });
+  
   it('responds with the newly registered user', async () => {
     let res = await request(server)
       .post('/api/auth/register')
