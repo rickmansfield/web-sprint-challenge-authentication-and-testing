@@ -28,7 +28,7 @@ router.post('/register', validateUserBody, checkUserNameFree, (req, res) => {
 
 });
 
-router.post('/login', validateCredentials, validateUserBody, (req, res) => {
+router.post('/login', validateUserBody, validateCredentials,  (req, res) => {
   // res.end('implement login, please!');
   let { username, password } = req.body
   Users.findBy({ username })
