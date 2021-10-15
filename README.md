@@ -63,3 +63,5 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 4. How does _Test Driven Development_ change the way we write applications and tests?
    1. If you follow TDD workflow you create the test "first" then write the code, THEN refactor as needed/wanted. 
+
+I remembered to answer these this time !!! YAAAA.. lol
