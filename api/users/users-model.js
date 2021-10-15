@@ -14,7 +14,7 @@ function findById(id) {
 }
 
 module.exports = {
+    findBy,
     add,
     findById,
-    findBy,
 }

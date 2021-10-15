@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs')
-router.post('/register', (req, res) => {
+const Users = require('../users/users-model')
+const { tokenBuilder } = require('./token-builder')
+const { 
+  validateUserBody, 
+  checkUserNameFree, 
+  validateCredentials 
+} = require('./auth-middleware')
+
+
+
+router.post('/register', checkUserNameFree, validateUserBody, (req, res) => {
   res.end('implement register, please!');
   /*
     IMPLEMENT
@@ -29,7 +39,7 @@ router.post('/register', (req, res) => {
   */
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', validateCredentials, validateUserBody, (req, res) => {
   res.end('implement login, please!');
   /*
     IMPLEMENT
